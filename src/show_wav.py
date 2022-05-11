@@ -2,6 +2,7 @@ import wave as wave
 from matplotlib import scale
 import numpy as np
 import matplotlib.pyplot as plt
+from utils import play
 
 
 def show_and_save_wave(wav_file):
@@ -46,3 +47,5 @@ wave_out.setsampwidth(2)
 wave_out.setframerate(sample_rate)
 wave_out.writeframes(data_scale_adjust)
 wave_out.close()
+
+play(data_scale_adjust, sample_rate)

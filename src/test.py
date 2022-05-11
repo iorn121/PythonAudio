@@ -1,4 +1,4 @@
 import numpy as np
 
-A = np.zeros((3, 2))
+A = np.iinfo(np.int16)
 print(A)
