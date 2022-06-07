@@ -5,4 +5,8 @@ import scipy.signal as sp
 import matplotlib.pyplot as plt
 
 data=wave.open("./WAV/jihou_tadaima.wav","rb")
-f,t,stft_data=sp.stft(data,)
+buff=data.readframes(-1)
+convert=np.frombuffer(buff,dtype=np.int16)
+f,t,stft_data=sp.stft(x=convert,fs=data.getframerate(),window='hann',nperseg=512,noverlap=256)
+
+print(f,t,stft_data)
