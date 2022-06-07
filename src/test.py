@@ -5,3 +5,4 @@ import scipy.signal as sp
 import matplotlib.pyplot as plt
 
 data=wave.open("./WAV/jihou_tadaima.wav","rb")
+f,t,stft_data=sp.stft(data,)
