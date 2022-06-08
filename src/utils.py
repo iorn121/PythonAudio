@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import wave as wave
 import sounddevice as sd
+import soundfile as sf
 import logging
 import os
 
@@ -12,12 +13,12 @@ def play_sound(data, frame_rate):
     status = sd.wait()
 
 
-def record_sound(second_length,frame_rate):
+def record_sound(second_length,frame_rate,name):
     print("Record...")
     data=sd.rec(int(second_length*frame_rate), frame_rate,channels=1)
     sd.wait()
     print("Complete")
-    return data
+    sf.write('./WAV/'+name+'.wav',data,frame_rate)
 
 def save_sound_info(data,name):
     info=data.getparams()
