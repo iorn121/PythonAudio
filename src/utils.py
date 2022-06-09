@@ -19,7 +19,7 @@ def record_sound(second_length, frame_rate, name):
     sd.wait()
     print("Complete")
     # ノーマライズ。量子化ビット16bitで録音するので int16 の範囲で最大化する
-    data = data / data.max() * np.iinfo(np.int16).max
+    # data = data / data.max() * np.iinfo(np.int16).max
 
     # float -> int
     data = data.astype(np.int16)
@@ -31,7 +31,6 @@ def record_sound(second_length, frame_rate, name):
         wb.setsampwidth(2)  # 16bit=2byte
         wb.setframerate(frame_rate)
         wb.writeframes(data.tobytes())  # バイト列に変換
-    return data
 
 
 def save_sound_info(data, name):
