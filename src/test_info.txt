@@ -1,0 +1,6 @@
+nchannels: 1
+sampwidth: 2
+framerate: 16000
+nframes: 80000
+comptype: NONE
+compname: not compressed
